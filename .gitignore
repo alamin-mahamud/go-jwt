@@ -26,3 +26,6 @@ _testmain.go
 *.test
 *.prof
 .vagrant
+vendor/
+.idea/
+.vscode/
