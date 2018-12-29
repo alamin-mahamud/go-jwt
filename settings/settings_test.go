@@ -26,4 +26,8 @@ func TestSettings(t *testing.T){
 	t.Run("get environment", func(t *testing.T){
 		assert.NotEmpty(t, GetEnvironment())
 	})
+	t.Run("is local environment", func(t *testing.T){
+		b := IsLocalEnvironment()
+		assert.NotEmpty(t, b)
+	})
 }
