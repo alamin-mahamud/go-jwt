@@ -8,9 +8,11 @@ import (
 )
 
 var environments = map[string]string{
-	"production":    "settings/prod.json",
-	"preproduction": "settings/pre.json",
-	"tests":         "../../settings/tests.json",
+	"local": "settings/config.local.json",
+	"dev": "settings/config.dev.json",
+	"staging": "settings/config.staging.json",
+	"deployment": "settings/config.deployment.json",
+	"production": "settings/config.production.json",
 }
 
 type Settings struct {
@@ -19,14 +21,14 @@ type Settings struct {
 	JWTExpirationDelta int
 }
 
-var settings Settings = Settings{}
-var env = "preproduction"
+var settings = Settings{}
+var env = "local"
 
 func Init() {
 	env = os.Getenv("GO_ENV")
 	if env == "" {
-		fmt.Println("Warning: Setting preproduction environment due to lack of GO_ENV value")
-		env = "preproduction"
+		fmt.Println("Warning: Setting local environment due to lack of GO_ENV value")
+		env = "local"
 	}
 	LoadSettingsByEnv(env)
 }
@@ -54,6 +56,6 @@ func Get() Settings {
 	return settings
 }
 
-func IsTestEnvironment() bool {
-	return env == "tests"
+func IsLocalEnvironment() bool {
+	return env == "local"
 }
