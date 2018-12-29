@@ -6,7 +6,6 @@ import (
 )
 
 func TestSettings(t *testing.T){
-
 	t.Run("test init", func(t *testing.T){
 		Init()
 		got := settings
