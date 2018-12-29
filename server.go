@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/alamin-mahamud/golang-jwt-authentication-api-sample/pkg/routers"
-	"github.com/alamin-mahamud/golang-jwt-authentication-api-sample/pkg/settings"
+	"github.com/alamin-mahamud/golang-jwt-authentication-api-sample/settings"
 	"github.com/codegangsta/negroni"
 	"net/http"
 )

@@ -8,11 +8,11 @@ import (
 )
 
 var environments = map[string]string{
-	"local": "settings/config.local.json",
-	"dev": "settings/config.dev.json",
-	"staging": "settings/config.staging.json",
-	"deployment": "settings/config.deployment.json",
-	"production": "settings/config.production.json",
+	"local": "local/config.json",
+	"dev": "dev/config.json",
+	"staging": "staging/config.json",
+	"deployment": "deployment/config.json",
+	"production": "production/config.json",
 }
 
 type Settings struct {
