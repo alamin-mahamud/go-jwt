@@ -38,7 +38,7 @@ func CreateTokenEndpoint(w http.ResponseWriter, req *http.Request) {
 	tokenString, err := token.SignedString([]byte("Secret.&$asdfjklajfdl"))
 
 	if err != nil {
-		fmt.Println(error)
+		fmt.Println(err)
 	}
 
 	json.NewEncoder(w).Encode(JwtToken{Token: tokenString})
